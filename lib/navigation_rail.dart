@@ -125,7 +125,14 @@ class NavRail extends StatelessWidget {
               backgroundColor: bottomNavigationBarColor,
               currentIndex: currentIndex,
               onTap: onTap,
-              items: tabs,
+              items: tabs.map((e) {
+                return BottomNavigationBarItem(
+                    icon: e.icon,
+                    activeIcon: e.activeIcon,
+                    backgroundColor: e.backgroundColor,
+                    label: e.label?.replaceAll(r'Settings', ''),
+                    tooltip: e.tooltip);
+              }).toList(),
               unselectedItemColor: bottomNavigationBarUnselectedColor,
               selectedItemColor: bottomNavigationBarSelectedColor,
             ),
