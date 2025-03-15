@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'NavigationRail Demo',
       theme: _theme(ThemeData.light().copyWith(
-        accentColor: Colors.red,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
       )),
       darkTheme: ThemeData.dark(),
       home: Directionality(
@@ -26,14 +26,14 @@ class MyApp extends StatelessWidget {
       appBarTheme: base.appBarTheme.copyWith(elevation: 0.0),
       floatingActionButtonTheme: base.floatingActionButtonTheme.copyWith(
         elevation: 2.0,
-        backgroundColor: base.accentColor,
+        backgroundColor: base.colorScheme.secondary,
       ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
